@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		gszXUbl0ZvNRrmxYaV+lru/4zz4=
+		G2L7+jv6zYq2wDC5ZSMzGBxhc0M=
 		</data>
 		<key>Frameworks/Kingfisher.framework/Info.plist</key>
 		<data>
@@ -1530,7 +1530,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GKBAP9uQWNJmtNdxK4eOaZe1Hgg=
+		Mr9vR1PcWPJbvTxYlVwPXMLUwM4=
 		</data>
 		<key>Inter-Black.ttf</key>
 		<data>
@@ -1562,7 +1562,7 @@
 		</data>
 		<key>Modules/GTCUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		lDtCQERDZu1DjSXYHwPvKryS+E0=
+		FnCXOJ6nq6Au4mmJ3yVErmGHtZ0=
 		</data>
 		<key>Modules/GTCUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -1578,11 +1578,11 @@
 		</data>
 		<key>Modules/GTCUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qMMWHabjiDlwwoy0WF0bHB7Kvvk=
+		ygFhCrdBuvmBMIOsQ/Tdso5cghs=
 		</data>
 		<key>Modules/GTCUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		lDtCQERDZu1DjSXYHwPvKryS+E0=
+		FnCXOJ6nq6Au4mmJ3yVErmGHtZ0=
 		</data>
 		<key>Modules/GTCUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -1598,7 +1598,7 @@
 		</data>
 		<key>Modules/GTCUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		beax4hHB1C0cafHJZi7y0DCczp4=
+		mhIybW9axatAwJCLUCDBXgocLSQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1611,7 +1611,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R1PsHWq2ckK+6OEB+IjwKcOLnJj5e12W3VJqylrXhKM=
+			S4QEvpImuAL4SceFIwXu6BQn7lfGH7rYuUKd0+OoTvg=
 			</data>
 		</dict>
 		<key>Frameworks/Kingfisher.framework/Info.plist</key>
@@ -4327,7 +4327,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O3a0NTI81amSWHh9B6hvfvKOArY+nBD7J9S1A1VH+7E=
+			vx3S7chdGCH1zj/HGsxzTGugfCi08w8rBHT4/iOE29c=
 			</data>
 		</dict>
 		<key>Modules/GTCUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -4355,14 +4355,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fNvhJOwrj08tf3eev5yb1tdI+UUvie0x9EiivWISl3I=
+			bUrxkJvD0pTM4Hb/eIBC+nIRGl7G5CCtAlvH6JvNW5s=
 			</data>
 		</dict>
 		<key>Modules/GTCUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O3a0NTI81amSWHh9B6hvfvKOArY+nBD7J9S1A1VH+7E=
+			vx3S7chdGCH1zj/HGsxzTGugfCi08w8rBHT4/iOE29c=
 			</data>
 		</dict>
 		<key>Modules/GTCUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -4390,7 +4390,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1mMEG+x5KP3yrbI2ZR3zDesPj1xTq44FW2RTPH08fa4=
+			m/rOETikEYrtmNhxw0DjrjbrsWt0Cco++F2T82kvl7s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

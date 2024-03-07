@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/sefeddinbassarac/Library/Developer/Xcode/DerivedData/GTCUI-cxrwxsprbkotajakxmfbwwlvbpkn/Build/Intermediates.noindex/ArchiveIntermediates/GTCUI/InstallationBuildProductsLocation/Library/Frameworks/GTCUI.framework/GTCUI'
+binary-path:     '/Users/appcircle/Library/Developer/Xcode/DerivedData/GTCUI-dhnpqfgwtxvyxxdcuwjxrxhvrpmo/Build/Intermediates.noindex/ArchiveIntermediates/GTCUI/InstallationBuildProductsLocation/Library/Frameworks/GTCUI.framework/GTCUI'
 relocations:
   - { offsetInCU: 0x34, offset: 0x54307, size: 0x8, addend: 0x0, symName: _GTCUIVersionString, symObjAddr: 0x0, symBinAddr: 0x3C2A0, symSize: 0x0 }
   - { offsetInCU: 0x69, offset: 0x5433C, size: 0x8, addend: 0x0, symName: _GTCUIVersionNumber, symObjAddr: 0x28, symBinAddr: 0x3C2C8, symSize: 0x0 }
@@ -474,8 +474,8 @@ relocations:
   - { offsetInCU: 0x26C7, offset: 0x5F03E, size: 0x8, addend: 0x0, symName: '_$s5GTCUI12GTCTextFieldC17updateBorderColor33_C84D2A951B9BEDD401D76BA0EAD6FC56LLyyFyycfU0_TA', symObjAddr: 0x4708, symBinAddr: 0x132E8, symSize: 0x30 }
   - { offsetInCU: 0x26DB, offset: 0x5F052, size: 0x8, addend: 0x0, symName: '_$s5GTCUI12GTCTextFieldC17updateBorderColor33_C84D2A951B9BEDD401D76BA0EAD6FC56LLyyFyycfU_TA', symObjAddr: 0x4738, symBinAddr: 0x13318, symSize: 0x30 }
   - { offsetInCU: 0x27, offset: 0x5F3CB, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV12searchShadow_WZ', symObjAddr: 0x38, symBinAddr: 0x133C0, symSize: 0x78 }
-  - { offsetInCU: 0x4B, offset: 0x5F3EF, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV12searchShadowACvpZ', symObjAddr: 0x2088, symBinAddr: 0x580A8, symSize: 0x0 }
-  - { offsetInCU: 0x71, offset: 0x5F415, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV16searchShadowDarkACvpZ', symObjAddr: 0x20A8, symBinAddr: 0x580C8, symSize: 0x0 }
+  - { offsetInCU: 0x4B, offset: 0x5F3EF, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV12searchShadowACvpZ', symObjAddr: 0x20E8, symBinAddr: 0x580A8, symSize: 0x0 }
+  - { offsetInCU: 0x71, offset: 0x5F415, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV16searchShadowDarkACvpZ', symObjAddr: 0x2108, symBinAddr: 0x580C8, symSize: 0x0 }
   - { offsetInCU: 0x7F, offset: 0x5F423, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV12searchShadow_WZ', symObjAddr: 0x38, symBinAddr: 0x133C0, symSize: 0x78 }
   - { offsetInCU: 0x99, offset: 0x5F43D, size: 0x8, addend: 0x0, symName: '_$s5GTCUI9GTCShadowV16searchShadowDark_WZ', symObjAddr: 0xB0, symBinAddr: 0x13438, symSize: 0x78 }
   - { offsetInCU: 0x2B, offset: 0x5F597, size: 0x8, addend: 0x0, symName: '_$s5GTCUI20GTCLabelPresentationV4fontSo6UIFontCSgvg', symObjAddr: 0x0, symBinAddr: 0x134B0, symSize: 0x28 }
