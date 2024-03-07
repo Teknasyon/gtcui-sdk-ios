@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "platform-icon-apple.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

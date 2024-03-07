@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "popup-icon-person.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

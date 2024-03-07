@@ -1,0 +1,1039 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GTCUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreGraphics
+import DeveloperToolsSupport
+import Foundation
+@_exported import GTCUI
+import Kingfisher
+import PanModal
+import SnapKit
+import Swift
+import SwiftUI
+import UIKit.UIFont
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension UIKit.UIColor {
+  public static let blue500: UIKit.UIColor?
+  public static let blue400: UIKit.UIColor?
+  public static let blue300: UIKit.UIColor?
+  public static let blue100: UIKit.UIColor?
+  public static let neutral700: UIKit.UIColor?
+  public static let neutral600: UIKit.UIColor?
+  public static let neutral500: UIKit.UIColor?
+  public static let background: UIKit.UIColor?
+  public static let searchGrey: UIKit.UIColor?
+  public static let whiteBackground: UIKit.UIColor?
+  public static let whiteColor: UIKit.UIColor?
+  public static let surfaceBackground: UIKit.UIColor?
+  public static let gray100: UIKit.UIColor?
+  public static let gray200: UIKit.UIColor?
+  public static let gray300: UIKit.UIColor?
+  public static let green100: UIKit.UIColor?
+  public static let green500: UIKit.UIColor?
+  public static let red100: UIKit.UIColor?
+  public static let red500: UIKit.UIColor?
+  public static let yellow100: UIKit.UIColor?
+  public static let yellow300: UIKit.UIColor?
+  public static let yellow500: UIKit.UIColor?
+  public static let flowGreen: UIKit.UIColor?
+  public static let flowYellow: UIKit.UIColor?
+  public static let badgeYellow: UIKit.UIColor?
+  public static let badgeGray: UIKit.UIColor?
+  public static let primaryGradientFirst: UIKit.UIColor?
+  public static let primaryGradientLast: UIKit.UIColor?
+  public static let defaultBGColor: UIKit.UIColor?
+  public static let secondaryBGColor: UIKit.UIColor?
+  public static let tertiaryBGColor: UIKit.UIColor?
+  public static let defaultTextColor: UIKit.UIColor?
+  public static let secondaryTextColor: UIKit.UIColor?
+  public static let tertiaryTextColor: UIKit.UIColor?
+  public static let linkTextColor: UIKit.UIColor?
+  public static let highlightedTextColor: UIKit.UIColor?
+  public static let unreadBadgeTextColor: UIKit.UIColor?
+  public static let lightTextColor: UIKit.UIColor?
+  public static let primaryButtonBGColor: UIKit.UIColor?
+  public static let secondaryButtonBGColor: UIKit.UIColor?
+  public static let badgeDefaultForegroundColor: UIKit.UIColor?
+  public static let badgeDefaultBackgroundColor: UIKit.UIColor?
+  public static let badgeBGFillPrimary: UIKit.UIColor?
+  public static let badgeBGFillCaution: UIKit.UIColor?
+  public static let badgeBGFillError: UIKit.UIColor?
+  public static let badgeBGFillSuccess: UIKit.UIColor?
+  public static let badgeTextCaution: UIKit.UIColor?
+  public static let badgeTextError: UIKit.UIColor?
+  public static let badgeTextSuccess: UIKit.UIColor?
+  public static let bgFillCaution: UIKit.UIColor?
+  public static let bgFillCautionSecondary: UIKit.UIColor?
+  public static let bgFillPlaceholder: UIKit.UIColor?
+  public static let bgFillPlaceholderRed: UIKit.UIColor?
+  public static let searchBarBGColorInline: UIKit.UIColor?
+  public static let iconTintDefault: UIKit.UIColor?
+  public static let iconTintProminent: UIKit.UIColor?
+  public static let iconTintPrimary: UIKit.UIColor?
+  public static let searchBarIndicatorTintColor: UIKit.UIColor?
+  public static let searchBarTextColor: UIKit.UIColor?
+  public static let searchBarTextColorInactive: UIKit.UIColor?
+  public static let searchBarTextColorPlaceholder: UIKit.UIColor?
+  public static let textFieldSelectedPrimaryColor: UIKit.UIColor?
+  public static let textFieldSelectedShadeColor: UIKit.UIColor?
+  public static let textFieldPlaceholderColor: UIKit.UIColor?
+  public static let textFieldTextColor: UIKit.UIColor?
+  public static let textFieldDefaultShadeColor: UIKit.UIColor?
+  public static let textFieldErrorColor: UIKit.UIColor?
+  public static let textFieldErrorShadeColor: UIKit.UIColor?
+}
+public struct GTCAttributedLabelPresentation {
+  public var text: Swift.String?
+  public var defaultTextFont: UIKit.UIFont
+  public var defaultTextColor: UIKit.UIColor?
+  public var links: [GTCUI.TextLink]
+  public var linkColor: UIKit.UIColor?
+  public var linkFont: UIKit.UIFont
+  public var alignment: UIKit.NSTextAlignment
+  public init(text: Swift.String? = nil, defaultTextFont: UIKit.UIFont = .attributedLabelDefaultFont, defaultTextColor: UIKit.UIColor? = .defaultTextColor, links: [GTCUI.TextLink] = [], linkColor: UIKit.UIColor? = nil, linkFont: UIKit.UIFont = .attributedLabelDefaultLinkFont, alignment: UIKit.NSTextAlignment = .natural)
+}
+public protocol GTCAttributedLabelDelegate : AnyObject {
+  func attributedLabel(_ checkbox: GTCUI.GTCAttributedLabel, didTapLinkWithIdentifier identifier: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GTCAttributedLabel : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCAttributedLabelPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any GTCUI.GTCAttributedLabelDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension GTCUI.GTCAttributedLabel : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+}
+public struct GTCSearchControllerPresentation {
+  public var searchPlaceholderText: Swift.String?
+  public init(searchPlaceholderText: Swift.String?)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GTCSearchController : UIKit.UISearchController, UIKit.UISearchBarDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var searchBar: UIKit.UISearchBar {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCSearchControllerPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(searchResultsController: UIKit.UIViewController?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc public func searchBarTextDidBeginEditing(_ searchBar: UIKit.UISearchBar)
+  @objc deinit
+}
+public struct GTCBadgePresentation {
+  public enum BadgeType {
+    case icon
+    case text
+    case simCard
+    public static func == (a: GTCUI.GTCBadgePresentation.BadgeType, b: GTCUI.GTCBadgePresentation.BadgeType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var badgeType: GTCUI.GTCBadgePresentation.BadgeType
+  public var icon: GTCUI.GTCIcon?
+  public var iconName: Swift.String?
+  public var badgeTitle: Swift.String?
+  public var backgroundColor: UIKit.UIColor?
+  public var foregroundColor: UIKit.UIColor?
+  public var isBusiness: Swift.Bool
+  public init(badgeType: GTCUI.GTCBadgePresentation.BadgeType, icon: GTCUI.GTCIcon? = nil, iconName: Swift.String? = nil, badgeTitle: Swift.String? = nil, backgroundColor: UIKit.UIColor? = nil, foregroundColor: UIKit.UIColor? = nil, isBusiness: Swift.Bool = false)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class GTCBadgeView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCBadgePresentation? {
+    get
+    set
+  }
+  @_documentation(visibility: internal) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public struct GTCSegmentControlPresentation {
+  public struct Segment {
+    public var title: Swift.String
+    public var width: CoreFoundation.CGFloat?
+    public init(title: Swift.String, width: CoreFoundation.CGFloat? = nil)
+  }
+  public var segments: [GTCUI.GTCSegmentControlPresentation.Segment]
+  public init(segments: [GTCUI.GTCSegmentControlPresentation.Segment])
+}
+public protocol GTCSegmentControlDelegate : AnyObject {
+  func valueChanged(_ segmentControl: GTCUI.GTCSegmentControl, selectedIndex: Swift.Int)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GTCSegmentControl : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var velocity: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var selectedIndex: Swift.Int
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any GTCUI.GTCSegmentControlDelegate)?
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCSegmentControlPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension Foundation.NSMutableAttributedString {
+  public static func highlightedAttributedString(for string: Swift.String, highlightedString: Swift.String, defaultFont: UIKit.UIFont, defaultColor: UIKit.UIColor, highlightedFont: UIKit.UIFont, highlightedColor: UIKit.UIColor) -> Foundation.NSMutableAttributedString
+}
+public struct GTCTextFieldPresentation {
+  public var selectedTitle: Swift.String?
+  public var title: Swift.String?
+  public var placeholder: Swift.String?
+  public var errorMessage: Swift.String?
+  public init(selectedTitle: Swift.String? = nil, title: Swift.String? = nil, placeholder: Swift.String? = nil, errorMessage: Swift.String? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GTCTextField : UIKit.UITextField {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCTextFieldPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) open var isLTRLanguage: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic open var titleFadeInDuration: Swift.Double
+  @objc @_Concurrency.MainActor(unsafe) dynamic open var titleFadeOutDuration: Swift.Double
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var textColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSecureTextEntry: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var editingOrSelected: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var hasErrorMessage: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isSelected: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func becomeFirstResponder() -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func resignFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open func isTitleVisible() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) open func isErrorVisible() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func textRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func editingRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func placeholderRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) open func titleLabelRectForBounds(_ bounds: CoreFoundation.CGRect, editing: Swift.Bool) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) open func errorLabelRectForBounds(_ bounds: CoreFoundation.CGRect, editing: Swift.Bool) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) open func titleHeight() -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) open func errorHeight() -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) open func textHeight() -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+public struct GTCLabelPresentation {
+  public var font: UIKit.UIFont?
+  public var textColor: UIKit.UIColor?
+  public init(font: UIKit.UIFont? = nil, textColor: UIKit.UIColor? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GTCLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCLabelPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension Swift.Array {
+  public func chunked(into size: Swift.Int) -> [[Element]]
+}
+extension Foundation.Bundle {
+  public static var framework: Foundation.Bundle?
+  public static var previewApp: Foundation.Bundle?
+}
+public enum GTCCorners {
+  case topLeft(_: GTCUI.GTCRadius)
+  case topRight(_: GTCUI.GTCRadius)
+  case bottomLeft(_: GTCUI.GTCRadius)
+  case bottomRight(_: GTCUI.GTCRadius)
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func roundedFull()
+  @_Concurrency.MainActor(unsafe) public func roundedCircle()
+  @_Concurrency.MainActor(unsafe) public func rounded(_ radius: GTCUI.GTCRadius = .radius200)
+  @_Concurrency.MainActor(unsafe) public func rounded(corners: UIKit.UIRectCorner, radius: GTCUI.GTCRadius = .radius200)
+  @_Concurrency.MainActor(unsafe) public func rounded(individualCorners corners: [GTCUI.GTCCorners])
+}
+public struct RadiusType : Swift.Equatable, Swift.ExpressibleByFloatLiteral {
+  public init(floatLiteral value: Swift.FloatLiteralType)
+  public static func == (a: GTCUI.RadiusType, b: GTCUI.RadiusType) -> Swift.Bool
+  public typealias FloatLiteralType = Swift.FloatLiteralType
+}
+public enum GTCRadius : GTCUI.RadiusType {
+  case radius0
+  case radius025
+  case radius050
+  case radius075
+  case radius100
+  case radius200
+  case radius250
+  case radius300
+  case radius400
+  case radius600
+  public func hash(into hasher: inout Swift.Hasher)
+  public init?(rawValue: GTCUI.RadiusType)
+  public typealias RawValue = GTCUI.RadiusType
+  public var hashValue: Swift.Int {
+    get
+  }
+  public var rawValue: GTCUI.RadiusType {
+    get
+  }
+}
+extension UIKit.UIImage {
+  public static func gtcIcon(_ icon: GTCUI.GTCIcon) -> UIKit.UIImage?
+  convenience public init?(gtcIcon: GTCUI.GTCIcon)
+}
+public enum GTCIcon : Swift.String, Swift.CaseIterable {
+  case move
+  case locationPin
+  case trash
+  case playCircle
+  case file
+  case star2
+  case adminAdd
+  case chartBottom
+  case voicemail
+  case crop
+  case blockCall
+  case contacts
+  case help2
+  case sparkle
+  case arrowTopRightCircle
+  case paperPlane
+  case wifiOff
+  case rotate
+  case businessBag
+  case trustPoint
+  case person
+  case megaphone
+  case close
+  case microphoneDisabled
+  case incognito
+  case callIncoming
+  case arrowLeft
+  case personRemove
+  case search
+  case arrowRightClosure
+  case crown
+  case moreVertical
+  case addContact
+  case award
+  case trade
+  case like
+  case wifi
+  case shutDown
+  case merge
+  case arrowBottomLeftCircle
+  case info
+  case megaphoneSmall
+  case loader
+  case plus
+  case heart
+  case layers
+  case stop
+  case photo
+  case calendarTodoFill
+  case bluetooth
+  case bell
+  case downloadArrow
+  case getcontact
+  case wifiProblem
+  case chevronTop
+  case volume
+  case shield
+  case mail
+  case videoCameraDisabled
+  case headphonesBig
+  case phoneCall
+  case lock
+  case tickBadge
+  case radarPlus
+  case callMissed
+  case shareArrowSquare
+  case chevronBottom
+  case danger
+  case edit
+  case voiceRecord
+  case eyes
+  case pin
+  case radar
+  case dollarAtm
+  case star
+  case hashtag
+  case mobileVoiceRec
+  case more
+  case message
+  case shoppingBag
+  case mobileUser
+  case shareArrow
+  case camera
+  case faceScan
+  case callOutgoing
+  case plusCircle
+  case flashSlash
+  case directionDiamond
+  case people
+  case dialpad
+  case customerSupport
+  case chart
+  case checkCircle
+  case chevronRight
+  case copy
+  case chevronLeft
+  case hyperlink
+  case starOut
+  case bellDisabled
+  case upload
+  case mention
+  case microphone
+  case check
+  case badgeAward
+  case noPhone
+  case help
+  case filter
+  case comment
+  case headphone
+  case settings
+  case plane
+  case checkDouble
+  case minusCircle
+  case hamburgerMenu
+  case declineCall
+  case dangerCircle
+  case volumeOff
+  case gift
+  case emoji
+  case personalCard
+  case videoCamera
+  case shareNetwork
+  case call
+  case logout
+  case chatEmpty
+  case searchBarClearButton
+  case searchBarContacts
+  case forwardArrow
+  case checkbox
+  case checkboxSelected
+  case radio
+  case radioSelected
+  case avatarSpamIndicator
+  case popupIconBlock
+  case popupIconChatbot
+  case popupIconCloudUp
+  case popupIconDanger
+  case popupIconInfo
+  case popupIconStar
+  case popupIconTrash
+  case popupIconWifiDisconnected
+  case popupIconCancel
+  case popupIconCheck
+  case popupIconCoin
+  case popupIconDownload
+  case popupIconPerson
+  case popupIconTag
+  case popupIconTrusted
+  case platformIconApple
+  case platformIconFacebookBordered
+  case platformIconFacebook
+  case platformIconGoogle
+  case platformIconInstagramFlat
+  case platformIconInstagram
+  case platformIconLinkedin
+  case platformIconTwitter
+  case swipeIconMore
+  case swipeIconDelete
+  case swipeIconPin
+  case swipeIconRemovePin
+  case chatMessageWaiting
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [GTCUI.GTCIcon]
+  public typealias RawValue = Swift.String
+  public static var allCases: [GTCUI.GTCIcon] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension GTCUI.GTCIcon : GTCUI.Snapshotable {
+  public static var snapshotName: Swift.String {
+    get
+  }
+  public static func suggestedSnapshotSize() -> CoreFoundation.CGSize
+  public static func prepareViewForSnapshot() -> UIKit.UIView
+}
+public struct GTCChatCardPresentation {
+  public enum ChatType : Swift.String {
+    case chat
+    case groupChat
+    case board
+    case call
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum MessageReadStatus : Swift.String {
+    case sent
+    case delivered
+    case read
+    case waiting
+    case none
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum MessageType : Swift.String {
+    case message
+    case callReceived
+    case callBounced
+    case callDeclined
+    case photo
+    case voiceRecording
+    case video
+    case location
+    case contact
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let isUnread: Swift.Bool
+  public let senderName: Swift.String
+  public let lastMessageSnippet: Swift.String
+  public let avatarViewPresentation: GTCUI.GTCAvatarPresentation?
+  public let messageDateString: Swift.String
+  public let messageType: GTCUI.GTCChatCardPresentation.MessageType
+  public let readStatus: GTCUI.GTCChatCardPresentation.MessageReadStatus
+  public let chatType: GTCUI.GTCChatCardPresentation.ChatType
+  public let unreadCount: Swift.String?
+  public var isPinned: Swift.Bool
+  public var isMuted: Swift.Bool
+  public var highlightedText: Swift.String?
+  public var highlightColor: UIKit.UIColor
+  public var isBusinessAccount: Swift.Bool
+  public init(isUnread: Swift.Bool, senderName: Swift.String, lastMessageSnippet: Swift.String, avatarViewPresentation: GTCUI.GTCAvatarPresentation?, messageDateString: Swift.String, messageType: GTCUI.GTCChatCardPresentation.MessageType, readStatus: GTCUI.GTCChatCardPresentation.MessageReadStatus, chatType: GTCUI.GTCChatCardPresentation.ChatType, unreadCount: Swift.String?, isPinned: Swift.Bool = false, isMuted: Swift.Bool = false, highlightedText: Swift.String? = nil, highlightColor: UIKit.UIColor = UIColor.highlightedTextColor ?? .black, isBusinessAccount: Swift.Bool = false)
+}
+public protocol GTCChatCardViewDelegate : AnyObject {
+  func chatCardDidTapAvatarView(_ view: GTCUI.GTCChatCardView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GTCChatCardView : UIKit.UIView, GTCUI.GTCAvatarViewDelegate {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCChatCardPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any GTCUI.GTCChatCardViewDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_documentation(visibility: internal) @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func startAnimatingAvatar()
+  @_Concurrency.MainActor(unsafe) public func stopAnimatingAvatar()
+  @_Concurrency.MainActor(unsafe) public func avatarViewDidTap(_ avatarView: GTCUI.GTCAvatarView)
+  @objc deinit
+}
+extension GTCUI.GTCChatCardView : GTCUI.Snapshotable {
+  @_Concurrency.MainActor(unsafe) public static var snapshotName: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static func suggestedSnapshotSize() -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) public static func prepareViewForSnapshot() -> UIKit.UIView
+}
+public struct GTCAvatarPresentation {
+  public struct AvatarSizeType : Swift.Equatable, Swift.ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Swift.FloatLiteralType)
+    public static func == (a: GTCUI.GTCAvatarPresentation.AvatarSizeType, b: GTCUI.GTCAvatarPresentation.AvatarSizeType) -> Swift.Bool
+    public typealias FloatLiteralType = Swift.FloatLiteralType
+  }
+  public enum PlaceholderType {
+    case neutral
+    case red
+    public static func == (a: GTCUI.GTCAvatarPresentation.PlaceholderType, b: GTCUI.GTCAvatarPresentation.PlaceholderType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum AvatarSize : GTCUI.GTCAvatarPresentation.AvatarSizeType {
+    case size800
+    case size1000
+    case size1600
+    case size2200
+    case size3300
+    public func hash(into hasher: inout Swift.Hasher)
+    public init?(rawValue: GTCUI.GTCAvatarPresentation.AvatarSizeType)
+    public typealias RawValue = GTCUI.GTCAvatarPresentation.AvatarSizeType
+    public var hashValue: Swift.Int {
+      get
+    }
+    public var rawValue: GTCUI.GTCAvatarPresentation.AvatarSizeType {
+      get
+    }
+  }
+  public var avatarURL: Foundation.URL?
+  public var size: GTCUI.GTCAvatarPresentation.AvatarSize
+  public var placeholderType: GTCUI.GTCAvatarPresentation.PlaceholderType
+  public var placeholderIcon: GTCUI.GTCIcon?
+  public var shouldShowGradientStroke: Swift.Bool
+  public var isSpam: Swift.Bool
+  public init(avatarURL: Foundation.URL? = nil, size: GTCUI.GTCAvatarPresentation.AvatarSize = .size800, placeholderType: GTCUI.GTCAvatarPresentation.PlaceholderType = .neutral, shouldShowGradientStroke: Swift.Bool = false, isSpam: Swift.Bool = false, placeholderIcon: GTCUI.GTCIcon? = nil)
+}
+public protocol GTCAvatarViewDelegate : AnyObject {
+  func avatarViewDidTap(_ avatarView: GTCUI.GTCAvatarView)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class GTCAvatarView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCAvatarPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any GTCUI.GTCAvatarViewDelegate)?
+  @_documentation(visibility: internal) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func startAnimating()
+  @_Concurrency.MainActor(unsafe) public func stopAnimating()
+  @objc deinit
+}
+public struct GTCCirclePresentation {
+  public var iconSize: CoreFoundation.CGSize?
+  public var iconEdgeMargins: UIKit.UIEdgeInsets?
+  public var icon: GTCUI.GTCIcon
+  public var backgroundColor: UIKit.UIColor?
+  public var foregroundColor: UIKit.UIColor?
+  public init(iconSize: CoreFoundation.CGSize? = nil, iconEdgeMargins: UIKit.UIEdgeInsets? = nil, icon: GTCUI.GTCIcon, backgroundColor: UIKit.UIColor? = nil, foregroundColor: UIKit.UIColor? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class GTCCircleView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCCirclePresentation? {
+    get
+    set
+  }
+  @_documentation(visibility: internal) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public struct GTCBottomSheetPresentation {
+  public var showDragger: Swift.Bool
+  public var fixedFormHeight: CoreFoundation.CGFloat?
+}
+public typealias GTCBottomSheetPresentable = PanModal.PanModalPresentable
+public typealias GTCBottomSheetRepresentable = UIKit.UIViewController & GTCUI.GTCBottomSheetPresentable
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GTCBottomSheet : GTCUI.GTCBottomSheetRepresentable {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCBottomSheetPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension GTCUI.GTCBottomSheet {
+  @_Concurrency.MainActor(unsafe) public var panScrollable: UIKit.UIScrollView? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var anchorModalToLongForm: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var showDragIndicator: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var cornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var longFormHeight: PanModal.PanModalHeight {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isUserInteractionEnabled: Swift.Bool {
+    get
+  }
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func presentModal(_ gtcBottomSheet: GTCUI.GTCBottomSheet)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct GTCSearchBarPresentation {
+  public enum SearchBarType {
+    case inline
+    case standalone
+    public static func == (a: GTCUI.GTCSearchBarPresentation.SearchBarType, b: GTCUI.GTCSearchBarPresentation.SearchBarType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var type: GTCUI.GTCSearchBarPresentation.SearchBarType
+  public var placeholderText: Swift.String?
+  public init(type: GTCUI.GTCSearchBarPresentation.SearchBarType = .inline, placeholderText: Swift.String? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GTCSearchBar : UIKit.UISearchBar, UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCSearchBarPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_documentation(visibility: internal) @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc deinit
+}
+public enum GTCButtonTypes {
+  case text
+  case primary
+  case danger
+  case dangerFilled
+  case ghost
+  case border
+  case grey
+  public static func == (a: GTCUI.GTCButtonTypes, b: GTCUI.GTCButtonTypes) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum GTCButtonIcon {
+  case left(icon: GTCUI.GTCIcon)
+  case right(icon: GTCUI.GTCIcon)
+  case center(icon: GTCUI.GTCIcon)
+}
+public struct TextLink {
+  public var highlightText: Swift.String
+  public var linkIdentifier: Swift.String
+  public init(highlightText: Swift.String, linkIdentifier: Swift.String)
+}
+public struct GTCPopupPresentation {
+  public var image: GTCUI.GTCIcon
+  public var title: Swift.String?
+  public var description: Swift.String?
+  public var subtitle: Swift.String?
+  public var vButtonLayout: Swift.Bool
+  public init(image: GTCUI.GTCIcon, title: Swift.String? = nil, description: Swift.String? = nil, subtitle: Swift.String? = nil, vButtonLayout: Swift.Bool = false)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GTCPopup : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCPopupPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func configureUI()
+  @_Concurrency.MainActor(unsafe) public func setupLayout()
+  @_Concurrency.MainActor(unsafe) public func add(_ button: GTCUI.GTCButton)
+  @objc deinit
+}
+public struct GTCCircleButtonPresentation {
+  public var iconEdgeMargins: UIKit.NSDirectionalEdgeInsets?
+  public var icon: GTCUI.GTCIcon
+  public var disabledIcon: GTCUI.GTCIcon?
+  public var selectedIcon: GTCUI.GTCIcon?
+  public var backgroundColor: UIKit.UIColor?
+  public var foregroundColor: UIKit.UIColor?
+  public init(iconEdgeMargins: UIKit.NSDirectionalEdgeInsets? = NSDirectionalEdgeInsets(
+            top: .padding100,
+            leading: .padding100,
+            bottom: .padding100,
+            trailing: .padding100
+        ), icon: GTCUI.GTCIcon, disabledIcon: GTCUI.GTCIcon? = nil, selectedIcon: GTCUI.GTCIcon? = nil, backgroundColor: UIKit.UIColor? = nil, foregroundColor: UIKit.UIColor? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class GTCCircleButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCCircleButtonPresentation? {
+    get
+    set
+  }
+  @_documentation(visibility: internal) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public struct GTCCheckboxPresentation {
+  public enum CheckboxShape {
+    case circle
+    case square
+    public static func == (a: GTCUI.GTCCheckboxPresentation.CheckboxShape, b: GTCUI.GTCCheckboxPresentation.CheckboxShape) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum CheckboxTextSize {
+    case small
+    case large
+    public static func == (a: GTCUI.GTCCheckboxPresentation.CheckboxTextSize, b: GTCUI.GTCCheckboxPresentation.CheckboxTextSize) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var text: Swift.String?
+  public var defaultTextFont: UIKit.UIFont
+  public var links: [GTCUI.TextLink]
+  public var isSelected: Swift.Bool
+  public var textSize: GTCUI.GTCCheckboxPresentation.CheckboxTextSize
+  public var shape: GTCUI.GTCCheckboxPresentation.CheckboxShape
+  public var tintColor: UIKit.UIColor?
+  public init(text: Swift.String? = nil, links: [GTCUI.TextLink] = [], isSelected: Swift.Bool = false, textSize: GTCUI.GTCCheckboxPresentation.CheckboxTextSize = .large, shape: GTCUI.GTCCheckboxPresentation.CheckboxShape = .square, tintColor: UIKit.UIColor? = nil)
+}
+public protocol GTCCheckboxViewDelegate : AnyObject {
+  func checkboxDidToggleCheckbox(_ checkbox: GTCUI.GTCCheckboxView)
+  func checkboxDidTapNonLinkText(_ checkbox: GTCUI.GTCCheckboxView)
+  func checkbox(_ checkbox: GTCUI.GTCCheckboxView, didTapLinkWithIdentifier identifier: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GTCCheckboxView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCCheckboxPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any GTCUI.GTCCheckboxViewDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension GTCUI.GTCCheckboxView : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+}
+extension CoreFoundation.CGFloat {
+  public static let padding0: CoreFoundation.CGFloat
+  public static let padding025: CoreFoundation.CGFloat
+  public static let padding050: CoreFoundation.CGFloat
+  public static let padding100: CoreFoundation.CGFloat
+  public static let padding150: CoreFoundation.CGFloat
+  public static let padding200: CoreFoundation.CGFloat
+  public static let padding300: CoreFoundation.CGFloat
+  public static let padding400: CoreFoundation.CGFloat
+  public static let padding600: CoreFoundation.CGFloat
+  public static let padding800: CoreFoundation.CGFloat
+  public static let padding1000: CoreFoundation.CGFloat
+  public static let padding1200: CoreFoundation.CGFloat
+  public static let padding1400: CoreFoundation.CGFloat
+  public static let padding1600: CoreFoundation.CGFloat
+  public static let padding1800: CoreFoundation.CGFloat
+  public static let padding2000: CoreFoundation.CGFloat
+}
+public typealias GTCTableBottomSheetRepresentable = UIKit.UITableViewController & GTCUI.GTCBottomSheetPresentable
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GTCTableBottomSheet : GTCUI.GTCTableBottomSheetRepresentable {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public var panScrollable: UIKit.UIScrollView? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var anchorModalToLongForm: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var showDragIndicator: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var cornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isUserInteractionEnabled: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableView.Style)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func presentModal(_ gtcTableBottomSheet: GTCUI.GTCTableBottomSheet)
+}
+@_hasMissingDesignatedInitializers public class ChatColors {
+  public static let colors: [UIKit.UIColor]
+  @objc deinit
+}
+public protocol Snapshotable {
+  static var snapshotName: Swift.String { get }
+  static func prepareViewForSnapshot() -> UIKit.UIView
+  static func suggestedSnapshotSize() -> CoreFoundation.CGSize
+}
+extension GTCUI.Snapshotable {
+  public static func suggestedSnapshotSize() -> CoreFoundation.CGSize
+  public static func prepareViewForSnapshot() -> UIKit.UIView
+}
+public struct GTCButtonPresentation {
+  public var style: GTCUI.GTCButtonTypes
+  public var icon: GTCUI.GTCButtonIcon?
+  public var iconTintColor: UIKit.UIColor?
+  public var cornerRadius: GTCUI.GTCRadius?
+  public var titleColor: UIKit.UIColor?
+  public var iconPadding: CoreFoundation.CGFloat?
+  public var font: UIKit.UIFont?
+  public var backgroundColor: UIKit.UIColor?
+  public var isBordered: Swift.Bool?
+  public var title: Swift.String?
+  public init(style: GTCUI.GTCButtonTypes, icon: GTCUI.GTCButtonIcon? = nil, iconTintColor: UIKit.UIColor? = nil, cornerRadius: GTCUI.GTCRadius? = nil, titleColor: UIKit.UIColor? = nil, iconPadding: CoreFoundation.CGFloat? = nil, font: UIKit.UIFont? = nil, backgroundColor: UIKit.UIColor? = nil, isBordered: Swift.Bool? = nil, title: Swift.String? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GTCButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public var presentation: GTCUI.GTCButtonPresentation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func addAction(_ handler: @escaping (UIKit.UIButton) -> Swift.Void)
+  @objc deinit
+}
+extension UIKit.UIView {
+  public struct Edges : Swift.OptionSet {
+    public let rawValue: Swift.UInt
+    public init(rawValue: Swift.UInt)
+    public static let top: UIKit.UIView.Edges
+    public static var trailing: UIKit.UIView.Edges
+    public static var bottom: UIKit.UIView.Edges
+    public static var leading: UIKit.UIView.Edges
+    public static var all: UIKit.UIView.Edges
+    public static var vertical: UIKit.UIView.Edges
+    public static var horizantal: UIKit.UIView.Edges
+    public typealias ArrayLiteralElement = UIKit.UIView.Edges
+    public typealias Element = UIKit.UIView.Edges
+    public typealias RawValue = Swift.UInt
+  }
+  @_Concurrency.MainActor(unsafe) public func addBorder(_ edges: UIKit.UIView.Edges = .all, width: CoreFoundation.CGFloat, color: UIKit.UIColor?)
+}
+public enum TypographicStyle : Swift.String {
+  case normal
+  case italic
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TypographicWeight : Swift.String {
+  case light
+  case regular
+  case medium
+  case semibold
+  case bold
+  case black
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct TypographicSizeType : Swift.Equatable, Swift.ExpressibleByFloatLiteral {
+  public init(floatLiteral value: Swift.FloatLiteralType)
+  public static func == (a: GTCUI.TypographicSizeType, b: GTCUI.TypographicSizeType) -> Swift.Bool
+  public typealias FloatLiteralType = Swift.FloatLiteralType
+}
+public enum TypographicSize : GTCUI.TypographicSizeType {
+  case h1
+  case h2
+  case h3
+  case h4
+  case h5
+  case body
+  case body2
+  case caption
+  case caption2
+  public func hash(into hasher: inout Swift.Hasher)
+  public init?(rawValue: GTCUI.TypographicSizeType)
+  public typealias RawValue = GTCUI.TypographicSizeType
+  public var hashValue: Swift.Int {
+    get
+  }
+  public var rawValue: GTCUI.TypographicSizeType {
+    get
+  }
+}
+extension UIKit.UIFont {
+  public static func font(weight: GTCUI.TypographicWeight, size: GTCUI.TypographicSize, style: GTCUI.TypographicStyle = .normal) -> UIKit.UIFont
+  public static let searchBarTextFont: UIKit.UIFont
+  public static let searchBarPlaceholderFont: UIKit.UIFont
+  public static let checkboxTextFontLarge: UIKit.UIFont
+  public static let checkboxTextFontSmall: UIKit.UIFont
+  public static let attributedLabelDefaultFont: UIKit.UIFont
+  public static let attributedLabelDefaultLinkFont: UIKit.UIFont
+  public static let textFieldFont: UIKit.UIFont
+  public static let textFieldLabelFont: UIKit.UIFont
+}
+extension UIKit.UIImage {
+  public static func imageWithSolidBackground(bounds: CoreFoundation.CGRect, backgroundColor: UIKit.UIColor? = nil, cornerRadius: GTCUI.GTCRadius = .radius200) -> UIKit.UIImage?
+}
+extension GTCUI.GTCBadgePresentation.BadgeType : Swift.Equatable {}
+extension GTCUI.GTCBadgePresentation.BadgeType : Swift.Hashable {}
+extension GTCUI.GTCRadius : Swift.Equatable {}
+extension GTCUI.GTCRadius : Swift.Hashable {}
+extension GTCUI.GTCRadius : Swift.RawRepresentable {}
+extension GTCUI.GTCIcon : Swift.Equatable {}
+extension GTCUI.GTCIcon : Swift.Hashable {}
+extension GTCUI.GTCIcon : Swift.RawRepresentable {}
+extension GTCUI.GTCChatCardPresentation.ChatType : Swift.Equatable {}
+extension GTCUI.GTCChatCardPresentation.ChatType : Swift.Hashable {}
+extension GTCUI.GTCChatCardPresentation.ChatType : Swift.RawRepresentable {}
+extension GTCUI.GTCChatCardPresentation.MessageReadStatus : Swift.Equatable {}
+extension GTCUI.GTCChatCardPresentation.MessageReadStatus : Swift.Hashable {}
+extension GTCUI.GTCChatCardPresentation.MessageReadStatus : Swift.RawRepresentable {}
+extension GTCUI.GTCChatCardPresentation.MessageType : Swift.Equatable {}
+extension GTCUI.GTCChatCardPresentation.MessageType : Swift.Hashable {}
+extension GTCUI.GTCChatCardPresentation.MessageType : Swift.RawRepresentable {}
+extension GTCUI.GTCAvatarPresentation.PlaceholderType : Swift.Equatable {}
+extension GTCUI.GTCAvatarPresentation.PlaceholderType : Swift.Hashable {}
+extension GTCUI.GTCAvatarPresentation.AvatarSize : Swift.Equatable {}
+extension GTCUI.GTCAvatarPresentation.AvatarSize : Swift.Hashable {}
+extension GTCUI.GTCAvatarPresentation.AvatarSize : Swift.RawRepresentable {}
+extension GTCUI.GTCSearchBarPresentation.SearchBarType : Swift.Equatable {}
+extension GTCUI.GTCSearchBarPresentation.SearchBarType : Swift.Hashable {}
+extension GTCUI.GTCButtonTypes : Swift.Equatable {}
+extension GTCUI.GTCButtonTypes : Swift.Hashable {}
+extension GTCUI.GTCCheckboxPresentation.CheckboxShape : Swift.Equatable {}
+extension GTCUI.GTCCheckboxPresentation.CheckboxShape : Swift.Hashable {}
+extension GTCUI.GTCCheckboxPresentation.CheckboxTextSize : Swift.Equatable {}
+extension GTCUI.GTCCheckboxPresentation.CheckboxTextSize : Swift.Hashable {}
+extension GTCUI.TypographicStyle : Swift.Equatable {}
+extension GTCUI.TypographicStyle : Swift.Hashable {}
+extension GTCUI.TypographicStyle : Swift.RawRepresentable {}
+extension GTCUI.TypographicWeight : Swift.Equatable {}
+extension GTCUI.TypographicWeight : Swift.Hashable {}
+extension GTCUI.TypographicWeight : Swift.RawRepresentable {}
+extension GTCUI.TypographicSize : Swift.Equatable {}
+extension GTCUI.TypographicSize : Swift.Hashable {}
+extension GTCUI.TypographicSize : Swift.RawRepresentable {}

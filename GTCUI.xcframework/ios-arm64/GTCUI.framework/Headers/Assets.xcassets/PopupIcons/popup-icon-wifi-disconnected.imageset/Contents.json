@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "popup-icon-wifi-disconnected.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

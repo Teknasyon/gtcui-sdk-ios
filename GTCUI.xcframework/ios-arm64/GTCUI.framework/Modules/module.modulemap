@@ -1,0 +1,11 @@
+framework module GTCUI {
+  umbrella header "GTCUI.h"
+  export *
+
+  module * { export * }
+}
+
+module GTCUI.Swift {
+  header "GTCUI-Swift.h"
+  requires objc
+}
